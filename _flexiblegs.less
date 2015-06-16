@@ -1,1 +1,196 @@
 // Flexible Grid System 4 | Less Plus | MIT License | flexible.gs
+
+// wrap
+// .wrap;
+// .wrap(col);
+
+.wrap() {
+  display: block;
+  font-size: 0;
+  text-align: center;
+  > * {
+    display: inline-block;
+    width: 100%;
+    position: relative;
+    min-height: 1px;
+    font-size: 1rem;
+    vertical-align: top;
+  }
+}
+.wrap(@col) when (@col = auto) {
+  > * {
+    width: auto;
+  }
+}
+.wrap(@col) when (isnumber(@col)) {
+  > * {
+    width: 100% / @col;
+  }
+}
+
+// flexbox
+// .flexbox;
+
+.flexbox() {
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-align-content: flex-start;
+  align-content: flex-start;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+// col
+// .col(col,row);
+
+.col(@col) when (@col = hidden) {
+  overflow: hidden;
+}
+.col(@col) when (@col = not-hidden) {
+  display: inline-block;
+}
+.col(@col, @row) when (isnumber(@col)) {
+  width: 100% / @row * @col;
+}
+
+// gutter
+// .gutter(gutter);
+
+.gutter(@gutter) when (isnumber(@gutter)) {
+  margin-left: -@gutter;
+  margin-right: -@gutter;
+  > * {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding-left: @gutter;
+    padding-right: @gutter;
+  }
+}
+.gutter(@gutter) when (@gutter = out) {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+// align
+// .align(align);
+
+.align(@align) when (@align = top) {
+  -webkit-align-items: flex-start;
+  align-items: flex-start;
+  > * {
+    vertical-align: top;
+  }
+}
+.align(@align) when (@align = middle) {
+  -webkit-align-items: center;
+  align-items: center;
+  > * {
+    vertical-align: middle;
+  }
+}
+.align(@align) when (@align = bottom) {
+  -webkit-align-items: flex-end;
+  align-items: flex-end;
+  > * {
+    vertical-align: bottom;
+  }
+}
+.align(@align) when (@align = between) {
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  -webkit-align-content: space-between;
+  align-content: space-between;
+}
+.align(@align) when (@align = around) {
+  -webkit-justify-content: space-around;
+  justify-content: space-around;
+  -webkit-align-content: space-around;
+  align-content: space-around;
+}
+.align(@align) when (@align = baseline) {
+  -webkit-align-items: baseline;
+  align-items: baseline;
+}
+.align(@align) when (@align = center) {
+  -webkit-justify-content: center;
+  justify-content: center;
+  text-align: center;
+}
+.align(@align) when (@align = left) {
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+  text-align: left;
+}
+.align(@align) when (@align = right) {
+  -webkit-justify-content: flex-end;
+  justify-content: flex-end;
+  text-align: right;
+}
+.align(@align) when (@align = first) {
+  -webkit-box-ordinal-group: -1;
+  -moz-box-ordinal-group: -1;
+  -ms-flex-order: -1;
+  -webkit-order: -1;
+  order: -1;
+}
+.align(@align) when (@align = not-first) {
+  -webkit-box-ordinal-group: 0;
+  -moz-box-ordinal-group: 0;
+  -ms-flex-order: 0;
+  -webkit-order: 0;
+  order: 0;
+}
+.align(@align) when (@align = last) {
+  -webkit-box-ordinal-group: 1;
+  -moz-box-ordinal-group: 1;
+  -ms-flex-order: 1;
+  -webkit-order: 1;
+  order: 1;
+}
+.align(@align) when (@align = not-last) {
+  -webkit-box-ordinal-group: 0;
+  -moz-box-ordinal-group: 0;
+  -ms-flex-order: 0;
+  -webkit-order: 0;
+  order: 0;
+}
+.align(@align) when (@align = reverse) {
+  -webkit-box-direction: reverse;
+  -webkit-flex-direction: row-reverse;
+  -ms-flex-direction: row-reverse;
+  flex-direction: row-reverse;
+  -webkit-flex-wrap: wrap-reverse;
+  -ms-flex-wrap: wrap-reverse;
+  flex-wrap: wrap-reverse;
+}
+.align(@align) when (@align = not-reverse) {
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+// breakpoints
+// @media breakpoint {
+//
+// }
+
+@breakpoint-lg: ~"(max-width: 1024px)";
+@breakpoint-md: ~"(max-width: 768px)";
+@breakpoint-sm: ~"(max-width: 667px)";
+@breakpoint-xs: ~"(max-width: 414px)";
