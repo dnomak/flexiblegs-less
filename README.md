@@ -1,6 +1,6 @@
 #[flexiblegs-less-plus](http://flexible.gs)
 
-Flexible Grid System 4 Less Plus
+Flexible Grid System Less Plus
 
 ##Install
 

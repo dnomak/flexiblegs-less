@@ -1,11 +1,11 @@
 {
   "name": "flexiblegs-less-plus",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "homepage": "http://flexible.gs",
   "authors": [
     "@dnomak"
   ],
-  "description": "Flexible Grid System 4 Less Plus",
+  "description": "Flexible Grid System Less Plus",
   "main": "_flexiblegs.less",
   "keywords": [
     "css",
