@@ -1,15 +1,19 @@
-// Flexible Grid System 5 | Less Plus | MIT License | flexible.gs
+// Flexible Grid System 5.2.0 | Less Plus | MIT License | flexible.gs
 
 .wrap() {
   display: block;
+  width: 100%;
   font-size: 0;
-  text-align: center;
+  text-align: left;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
   > * {
     display: inline-block;
     width: 100%;
     min-height: 1px;
     font-size: 1rem;
-    vertical-align: top;
+    vertical-align: middle;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
@@ -25,12 +29,29 @@
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  -webkit-justify-content: center;
-  -ms-justify-content: center;
-  justify-content: center;
-  -webkit-align-content: flex-start;
-  -ms-align-content: flex-start;
-  align-content: flex-start;
+  -webkit-justify-content: flex-start;
+  -ms-justify-content: flex-start;
+  justify-content: flex-start;
+  -webkit-align-content: center;
+  -ms-align-content: center;
+  align-content: center;
+  -webkit-align-items: center;
+  -ms-align-items: center;
+  align-items: center;
+}
+.wrap(@col) when (@col = table) {
+  display: table;
+  table-layout: fixed;
+  > * {
+    display: table-cell;
+  }
+}
+.wrap(@col) when (@col = not-table) {
+  display: block;
+  table-layout: auto;
+  > * {
+    display: inline-block;
+  }
 }
 .wrap(@col) when (@col = auto) {
   > * {
@@ -54,16 +75,22 @@
 }
 
 .gutter(@gutter) when (isnumber(@gutter)) {
-  margin-left: -@gutter;
-  margin-right: -@gutter;
+  width: calc(~"100% +" @gutter + @gutter);
+  margin-left: -@gutter / 2;
+  margin-right: -@gutter / 2;
+  padding-left: 0;
+  padding-right: 0;
   > * {
-    padding-left: @gutter;
-    padding-right: @gutter;
+    padding-left: @gutter / 2;
+    padding-right: @gutter / 2;
   }
 }
-.gutter(@gutter) when (@gutter = outside) {
+.gutter(@gutter, @outside) when (isnumber(@gutter)) and (@outside = outside) {
+  width: 100%;
   margin-left: 0;
   margin-right: 0;
+  padding-left: @gutter / 2;
+  padding-right: @gutter / 2;
 }
 
 .align(@align) when (@align = top) {
@@ -169,4 +196,3 @@
 @breakpoint-lg: ~"(max-width: 1024px)";
 @breakpoint-md: ~"(max-width: 768px)";
 @breakpoint-sm: ~"(max-width: 667px)";
-@breakpoint-xs: ~"(max-width: 414px)";
