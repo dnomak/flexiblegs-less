@@ -1,4 +1,4 @@
-// Flexible Grid System 5.3.0 | Less Plus | MIT License | flexible.gs
+// Flexible Grid System 5.3.1 | Less Plus | MIT License | flexible.gs
 
 .wrap() {
   display: block;
@@ -8,18 +8,8 @@
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  > * {
-    display: inline-block;
-    width: 100%;
-    min-height: 1px;
-    font-size: 1rem;
-    vertical-align: middle;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-  }
 }
-.wrap(@col) when (@col = normal) {
+.wrap(@variable1) when (@variable1 = normal) {
   display: block;
   table-layout: auto;
   -webkit-flex-direction: initial;
@@ -41,7 +31,7 @@
     display: inline-block;
   }
 }
-.wrap(@col) when (@col = table) {
+.wrap(@variable1) when (@variable1 = table) {
   display: table;
   table-layout: fixed;
   -webkit-flex-direction: initial;
@@ -63,7 +53,7 @@
     display: table-cell;
   }
 }
-.wrap(@col) when (@col = flexbox) {
+.wrap(@variable1) when (@variable1 = flexbox) {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
@@ -87,47 +77,25 @@
     display: inline-block;
   }
 }
-.wrap(@col) when (@col = auto) {
-  > * {
-    width: auto;
-  }
-}
-.wrap(@col) when (isnumber(@col)) {
-  > * {
-    width: 100% / @col;
-  }
-}
-
-.col(@col) when (@col = hidden) {
-  overflow: hidden;
-}
-.col(@col) when (@col = not-hidden) {
-  display: inline-block;
-}
-.col(@col, @row) when (isnumber(@col)) {
-  width: 100% / @row * @col;
-}
-
-.gutter(@gutter) when (isnumber(@gutter)) {
-  width: calc(~"100% +" @gutter + @gutter);
-  margin-left: -@gutter / 2;
-  margin-right: -@gutter / 2;
+.wrap(@variable1, @variable2) when (@variable1 = gutter) {
+  width: calc(~"100% +" @variable2 + @variable2);
+  margin-left: -@variable2 / 2;
+  margin-right: -@variable2 / 2;
   padding-left: 0;
   padding-right: 0;
   > * {
-    padding-left: @gutter / 2;
-    padding-right: @gutter / 2;
+    padding-left: @variable2 / 2;
+    padding-right: @variable2 / 2;
   }
 }
-.gutter(@gutter, @outside) when (isnumber(@gutter)) and (@outside = outside) {
+.wrap(@variable1, @variable2) when (@variable1 = outside) {
   width: 100%;
   margin-left: 0;
   margin-right: 0;
-  padding-left: @gutter / 2;
-  padding-right: @gutter / 2;
+  padding-left: @variable2 / 2;
+  padding-right: @variable2 / 2;
 }
-
-.align(@align) when (@align = top) {
+.wrap(@variable1) when (@variable1 = top) {
   -webkit-align-items: flex-start;
   -ms-align-items: flex-start;
   align-items: flex-start;
@@ -135,7 +103,7 @@
     vertical-align: top;
   }
 }
-.align(@align) when (@align = middle) {
+.wrap(@variable1) when (@variable1 = middle) {
   -webkit-align-items: center;
   -ms-align-items: center;
   align-items: center;
@@ -143,7 +111,7 @@
     vertical-align: middle;
   }
 }
-.align(@align) when (@align = bottom) {
+.wrap(@variable1) when (@variable1 = bottom) {
   -webkit-align-items: flex-end;
   -ms-align-items: flex-end;
   align-items: flex-end;
@@ -151,7 +119,7 @@
     vertical-align: bottom;
   }
 }
-.align(@align) when (@align = between) {
+.wrap(@variable1) when (@variable1 = between) {
   -webkit-justify-content: space-between;
   -ms-justify-content: space-between;
   justify-content: space-between;
@@ -159,7 +127,7 @@
   -ms-align-content: space-between;
   align-content: space-between;
 }
-.align(@align) when (@align = around) {
+.wrap(@variable1) when (@variable1 = around) {
   -webkit-justify-content: space-around;
   -ms-justify-content: space-around;
   justify-content: space-around;
@@ -167,50 +135,30 @@
   -ms-align-content: space-around;
   align-content: space-around;
 }
-.align(@align) when (@align = baseline) {
+.wrap(@variable1) when (@variable1 = baseline) {
   -webkit-align-items: baseline;
   -ms-align-items: baseline;
   align-items: baseline;
 }
-.align(@align) when (@align = center) {
+.wrap(@variable1) when (@variable1 = center) {
   -webkit-justify-content: center;
   -ms-justify-content: center;
   justify-content: center;
   text-align: center;
 }
-.align(@align) when (@align = left) {
+.wrap(@variable1) when (@variable1 = left) {
   -webkit-justify-content: flex-start;
   -ms-justify-content: flex-start;
   justify-content: flex-start;
   text-align: left;
 }
-.align(@align) when (@align = right) {
+.wrap(@variable1) when (@variable1 = right) {
   -webkit-justify-content: flex-end;
   -ms-justify-content: flex-end;
   justify-content: flex-end;
   text-align: right;
 }
-.align(@align) when (@align = first) {
-  -ms-flex-order: -1;
-  -webkit-order: -1;
-  order: -1;
-}
-.align(@align) when (@align = not-first) {
-  -ms-flex-order: 0;
-  -webkit-order: 0;
-  order: 0;
-}
-.align(@align) when (@align = last) {
-  -ms-flex-order: 1;
-  -webkit-order: 1;
-  order: 1;
-}
-.align(@align) when (@align = not-last) {
-  -ms-flex-order: 0;
-  -webkit-order: 0;
-  order: 0;
-}
-.align(@align) when (@align = reverse) {
+.wrap(@variable1) when (@variable1 = reverse) {
   -webkit-flex-direction: row-reverse;
   -ms-flex-direction: row-reverse;
   flex-direction: row-reverse;
@@ -218,13 +166,62 @@
   -ms-flex-wrap: wrap-reverse;
   flex-wrap: wrap-reverse;
 }
-.align(@align) when (@align = not-reverse) {
+.wrap(@variable1) when (@variable1 = not-reverse) {
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
+}
+.wrap(@variable1) when (@variable1 = auto) {
+  > * {
+    width: auto;
+  }
+}
+.wrap(@variable1) when (isnumber(@variable1)) {
+  > * {
+    width: 100% / @variable1;
+  }
+}
+
+.col() {
+  display: inline-block;
+  min-height: 1px;
+  font-size: 1rem;
+  vertical-align: middle;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.col(@variable1) when (@variable1 = hidden) {
+  overflow: hidden;
+}
+.col(@variable1) when (@variable1 = not-hidden) {
+  display: inline-block;
+}
+.col(@variable1) when (@variable1 = first) {
+  -ms-flex-order: -1;
+  -webkit-order: -1;
+  order: -1;
+}
+.col(@variable1) when (@variable1 = not-first) {
+  -ms-flex-order: 0;
+  -webkit-order: 0;
+  order: 0;
+}
+.col(@variable1) when (@variable1 = last) {
+  -ms-flex-order: 1;
+  -webkit-order: 1;
+  order: 1;
+}
+.col(@variable1) when (@variable1 = not-last) {
+  -ms-flex-order: 0;
+  -webkit-order: 0;
+  order: 0;
+}
+.col(@variable1, @variable2) when (isnumber(@variable1)) {
+  width: 100% / @variable2 * @variable1;
 }
 
 @breakpoint-lg: ~"(max-width: 1024px)";
