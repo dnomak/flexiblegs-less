@@ -1,4 +1,4 @@
-// Flexible Grid System 5.3.1 | Less Plus | MIT License | flexible.gs
+// Flexible Grid System 5.3.2 | Less Plus | MIT License | flexible.gs
 
 .wrap() {
   display: block;
@@ -27,6 +27,9 @@
   -webkit-align-items: initial;
   -ms-align-items: initial;
   align-items: initial;
+  -webkit-column-count: auto;
+  -moz-column-count: auto;
+  column-count: auto;
   > * {
     display: inline-block;
   }
@@ -49,6 +52,9 @@
   -webkit-align-items: initial;
   -ms-align-items: initial;
   align-items: initial;
+  -webkit-column-count: auto;
+  -moz-column-count: auto;
+  column-count: auto;
   > * {
     display: table-cell;
   }
@@ -73,9 +79,17 @@
   -webkit-align-items: center;
   -ms-align-items: center;
   align-items: center;
+  -webkit-column-count: auto;
+  -moz-column-count: auto;
+  column-count: auto;
   > * {
     display: inline-block;
   }
+}
+.wrap(@variable1, @variable2) when (@variable1 = masonry) {
+  -webkit-column-count: @variable2;
+  -moz-column-count: @variable2;
+  column-count: @variable2;
 }
 .wrap(@variable1, @variable2) when (@variable1 = gutter) {
   width: calc(~"100% +" @variable2 + @variable2);
