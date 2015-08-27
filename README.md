@@ -4,9 +4,9 @@ Flexible Grid System Less Plus
 
 ## Install
 
-### [Download](https://raw.githubusercontent.com/flexiblegs/flexiblegs-less-plus/master/flexiblegs.less)
+### [Download](https://raw.githubusercontent.com/flexiblegs/flexiblegs-less-plus/master/flexiblegs-plus.less)
 ```less
-@import "flexiblegs.less";
+@import "flexiblegs-plus.less";
 ```
 
 ### [Bower](http://bower.io)

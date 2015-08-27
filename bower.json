@@ -1,6 +1,6 @@
 {
   "name": "flexiblegs-less-plus",
-  "version": "5.3.3",
+  "version": "5.3.4",
   "homepage": "http://flexible.gs",
   "description": "Flexible Grid System Less Plus",
   "keywords": [
@@ -13,7 +13,7 @@
     "flexbox",
     "flex"
   ],
-  "main": "flexiblegs.less",
+  "main": "flexiblegs-plus.less",
   "authors": [
     "@dnomak"
   ],

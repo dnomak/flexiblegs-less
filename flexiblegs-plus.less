@@ -1,4 +1,4 @@
-/*! Flexible Grid System 5.3.3 | Less Plus | MIT License | flexible.gs */
+/*! Flexible Grid System 5.3.4 | Less Plus | MIT License | flexible.gs */
 
 .wrap() {
   display: block;
@@ -10,32 +10,7 @@
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-.wrap(@variable1) when (@variable1 = normal) {
-  display: block;
-  table-layout: auto;
-  -webkit-flex-direction: initial;
-  -ms-flex-direction: initial;
-  flex-direction: initial;
-  -webkit-flex-wrap: initial;
-  -ms-flex-wrap: initial;
-  flex-wrap: initial;
-  -webkit-justify-content: initial;
-  -ms-justify-content: initial;
-  justify-content: initial;
-  -webkit-align-content: initial;
-  -ms-align-content: initial;
-  align-content: initial;
-  -webkit-align-items: initial;
-  -ms-align-items: initial;
-  align-items: initial;
-  -webkit-column-count: auto;
-  -moz-column-count: auto;
-  column-count: auto;
-  > * {
-    display: inline-block;
-  }
-}
-.wrap(@variable1) when (@variable1 = table) {
+.wrap(@prop) when (@prop = table) {
   display: table;
   table-layout: fixed;
   -webkit-flex-direction: initial;
@@ -60,7 +35,7 @@
     display: table-cell;
   }
 }
-.wrap(@variable1) when (@variable1 = flexbox) {
+.wrap(@prop) when (@prop = flexbox) {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
@@ -87,30 +62,50 @@
     display: inline-block;
   }
 }
-.wrap(@variable1, @variable2) when (@variable1 = masonry) {
-  -webkit-column-count: @variable2;
-  -moz-column-count: @variable2;
-  column-count: @variable2;
-}
-.wrap(@variable1, @variable2) when (@variable1 = gutter) {
-  width: calc(~"100% +" @variable2 + @variable2);
-  margin-left: -@variable2 / 2;
-  margin-right: -@variable2 / 2;
-  padding-left: 0;
-  padding-right: 0;
+.wrap(@prop) when (@prop = normal) {
+  display: block;
+  table-layout: auto;
+  -webkit-flex-direction: initial;
+  -ms-flex-direction: initial;
+  flex-direction: initial;
+  -webkit-flex-wrap: initial;
+  -ms-flex-wrap: initial;
+  flex-wrap: initial;
+  -webkit-justify-content: initial;
+  -ms-justify-content: initial;
+  justify-content: initial;
+  -webkit-align-content: initial;
+  -ms-align-content: initial;
+  align-content: initial;
+  -webkit-align-items: initial;
+  -ms-align-items: initial;
+  align-items: initial;
+  -webkit-column-count: auto;
+  -moz-column-count: auto;
+  column-count: auto;
   > * {
-    padding-left: @variable2 / 2;
-    padding-right: @variable2 / 2;
+    display: inline-block;
   }
 }
-.wrap(@variable1, @variable2) when (@variable1 = outside) {
-  width: 100%;
-  margin-left: 0;
-  margin-right: 0;
-  padding-left: @variable2 / 2;
-  padding-right: @variable2 / 2;
+.wrap(@prop) when (@prop = left) {
+  -webkit-justify-content: flex-start;
+  -ms-justify-content: flex-start;
+  justify-content: flex-start;
+  text-align: left;
 }
-.wrap(@variable1) when (@variable1 = top) {
+.wrap(@prop) when (@prop = center) {
+  -webkit-justify-content: center;
+  -ms-justify-content: center;
+  justify-content: center;
+  text-align: center;
+}
+.wrap(@prop) when (@prop = right) {
+  -webkit-justify-content: flex-end;
+  -ms-justify-content: flex-end;
+  justify-content: flex-end;
+  text-align: right;
+}
+.wrap(@prop) when (@prop = top) {
   -webkit-align-items: flex-start;
   -ms-align-items: flex-start;
   align-items: flex-start;
@@ -118,7 +113,7 @@
     vertical-align: top;
   }
 }
-.wrap(@variable1) when (@variable1 = middle) {
+.wrap(@prop) when (@prop = middle) {
   -webkit-align-items: center;
   -ms-align-items: center;
   align-items: center;
@@ -126,7 +121,7 @@
     vertical-align: middle;
   }
 }
-.wrap(@variable1) when (@variable1 = bottom) {
+.wrap(@prop) when (@prop = bottom) {
   -webkit-align-items: flex-end;
   -ms-align-items: flex-end;
   align-items: flex-end;
@@ -134,7 +129,7 @@
     vertical-align: bottom;
   }
 }
-.wrap(@variable1) when (@variable1 = between) {
+.wrap(@prop) when (@prop = between) {
   -webkit-justify-content: space-between;
   -ms-justify-content: space-between;
   justify-content: space-between;
@@ -142,7 +137,7 @@
   -ms-align-content: space-between;
   align-content: space-between;
 }
-.wrap(@variable1) when (@variable1 = around) {
+.wrap(@prop) when (@prop = around) {
   -webkit-justify-content: space-around;
   -ms-justify-content: space-around;
   justify-content: space-around;
@@ -150,30 +145,12 @@
   -ms-align-content: space-around;
   align-content: space-around;
 }
-.wrap(@variable1) when (@variable1 = baseline) {
+.wrap(@prop) when (@prop = baseline) {
   -webkit-align-items: baseline;
   -ms-align-items: baseline;
   align-items: baseline;
 }
-.wrap(@variable1) when (@variable1 = center) {
-  -webkit-justify-content: center;
-  -ms-justify-content: center;
-  justify-content: center;
-  text-align: center;
-}
-.wrap(@variable1) when (@variable1 = left) {
-  -webkit-justify-content: flex-start;
-  -ms-justify-content: flex-start;
-  justify-content: flex-start;
-  text-align: left;
-}
-.wrap(@variable1) when (@variable1 = right) {
-  -webkit-justify-content: flex-end;
-  -ms-justify-content: flex-end;
-  justify-content: flex-end;
-  text-align: right;
-}
-.wrap(@variable1) when (@variable1 = reverse) {
+.wrap(@prop) when (@prop = reverse) {
   -webkit-flex-direction: row-reverse;
   -ms-flex-direction: row-reverse;
   flex-direction: row-reverse;
@@ -181,7 +158,7 @@
   -ms-flex-wrap: wrap-reverse;
   flex-wrap: wrap-reverse;
 }
-.wrap(@variable1) when (@variable1 = not-reverse) {
+.wrap(@prop) when (@prop = not-reverse) {
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
@@ -189,14 +166,37 @@
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
 }
-.wrap(@variable1) when (@variable1 = auto) {
+.wrap(@prop, @val) when (@prop = gutter) {
+  width: calc(~"100% + @{val}px");
+  margin-left: -@val / 2px;
+  margin-right: -@val / 2px;
+  padding-left: 0;
+  padding-right: 0;
+  > * {
+    padding-left: @val / 2px;
+    padding-right: @val / 2px;
+  }
+}
+.wrap(@prop, @val) when (@prop = outside) {
+  width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: @val / 2px;
+  padding-right: @val / 2px;
+}
+.wrap(@prop, @val) when (@prop = masonry) {
+  -webkit-column-count: @val;
+  -moz-column-count: @val;
+  column-count: @val;
+}
+.wrap(@prop) when (@prop = auto) {
   > * {
     width: auto;
   }
 }
-.wrap(@variable1) when (isnumber(@variable1)) {
+.wrap(@prop) when (isnumber(@prop)) {
   > * {
-    width: 100% / @variable1;
+    width: 100% / @prop;
   }
 }
 
@@ -209,36 +209,32 @@
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-.col(@variable1) when (@variable1 = hidden) {
+.col(@prop) when (@prop = hidden) {
   overflow: hidden;
 }
-.col(@variable1) when (@variable1 = not-hidden) {
+.col(@prop) when (@prop = not-hidden) {
   display: inline-block;
 }
-.col(@variable1) when (@variable1 = first) {
+.col(@prop) when (@prop = first) {
   -ms-flex-order: -1;
   -webkit-order: -1;
   order: -1;
 }
-.col(@variable1) when (@variable1 = not-first) {
+.col(@prop) when (@prop = not-first) {
   -ms-flex-order: 0;
   -webkit-order: 0;
   order: 0;
 }
-.col(@variable1) when (@variable1 = last) {
+.col(@prop) when (@prop = last) {
   -ms-flex-order: 1;
   -webkit-order: 1;
   order: 1;
 }
-.col(@variable1) when (@variable1 = not-last) {
+.col(@prop) when (@prop = not-last) {
   -ms-flex-order: 0;
   -webkit-order: 0;
   order: 0;
 }
-.col(@variable1, @variable2) when (isnumber(@variable1)) {
-  width: 100% / @variable2 * @variable1;
+.col(@prop, @val) when (isnumber(@prop)) {
+  width: 100% / @val * @prop;
 }
-
-@breakpoint-lg: ~"(max-width: 1024px)";
-@breakpoint-md: ~"(max-width: 768px)";
-@breakpoint-sm: ~"(max-width: 667px)";
