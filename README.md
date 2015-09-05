@@ -9,6 +9,11 @@ Flexible Grid System Less Plus
 @import "flexiblegs-plus.less";
 ```
 
+### [npm](https://www.npmjs.com/package/flexiblegs-less-plus)
+```
+$ npm install --save flexiblegs-less-plus
+```
+
 ### [Bower](http://bower.io)
 ```
 $ bower install --save flexiblegs-less-plus
