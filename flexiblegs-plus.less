@@ -1,4 +1,4 @@
-/*! Flexible Grid System 5.3.4 | Less Plus | MIT License | flexible.gs */
+/*! Flexible Grid System 5.4.0 | Less Plus | MIT License | flexible.gs */
 
 .wrap() {
   display: block;
@@ -9,6 +9,9 @@
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+  > * {
+    display: inline-block;
+  }
 }
 .wrap(@prop) when (@prop = table) {
   display: table;
@@ -201,13 +204,15 @@
 }
 
 .col() {
-  display: inline-block;
   min-height: 1px;
   font-size: 1rem;
   vertical-align: middle;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+}
+.col(@prop, @val) when (@prop = width) {
+  width: ~"@{val}px";
 }
 .col(@prop) when (@prop = hidden) {
   overflow: hidden;
