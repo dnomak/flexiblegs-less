@@ -4,7 +4,7 @@ Flexible Grid System Less Plus
 
 ## Install
 
-### [Download](https://raw.githubusercontent.com/flexiblegs/flexiblegs-less-plus/master/flexiblegs-less-plus.less) the file and add the project as follows.
+### [Download](https://raw.githubusercontent.com/flexiblegs/flexiblegs-less-plus/master/flexiblegs-less-plus.less)
 ```less
 @import "flexiblegs-less-plus.less";
 ```
