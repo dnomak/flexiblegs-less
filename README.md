@@ -4,9 +4,9 @@ Flexible Grid System Less Plus
 
 ## Install
 
-### [Download](https://raw.githubusercontent.com/flexiblegs/flexiblegs-less-plus/master/flexiblegs-plus.less)
+### [Download](https://raw.githubusercontent.com/flexiblegs/flexiblegs-less-plus/master/flexiblegs-less-plus.less) the file and add the project as follows.
 ```less
-@import "flexiblegs-plus.less";
+@import "flexiblegs-less-plus.less";
 ```
 
 ### [npm](https://www.npmjs.com/package/flexiblegs-less-plus)
@@ -14,7 +14,7 @@ Flexible Grid System Less Plus
 $ npm install --save flexiblegs-less-plus
 ```
 
-### [Bower](http://bower.io)
+### [bower](http://bower.io/search/?q=flexiblegs-less-plus)
 ```
 $ bower install --save flexiblegs-less-plus
 ```
