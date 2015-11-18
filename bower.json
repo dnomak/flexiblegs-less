@@ -1,8 +1,8 @@
 {
-  "name": "flexiblegs-less-plus",
-  "version": "5.4.2",
+  "name": "flexiblegs-less",
+  "version": "5.5.0",
   "homepage": "http://flexible.gs",
-  "description": "Flexible Grid System Less Plus",
+  "description": "Flexible Grid System Less",
   "keywords": [
     "css",
     "less",
@@ -13,7 +13,7 @@
     "flexbox",
     "flex"
   ],
-  "main": "flexiblegs-less-plus.less",
+  "main": "flexiblegs-less.less",
   "author": "@dnomak",
   "license": "MIT",
   "ignore": [

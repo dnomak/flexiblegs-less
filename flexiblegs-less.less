@@ -1,4 +1,4 @@
-/*! Flexible Grid System 5.4.2 | Less Plus | MIT License | flexible.gs */
+/*! Flexible Grid System 5.5.0 | Less | MIT License | flexible.gs */
 
 .wrap() {
   display: block;
@@ -13,7 +13,7 @@
     display: inline-block;
   }
 }
-.wrap(@prop) when (@prop = table) {
+.wrap(@prop) when (@prop = "table") {
   display: table;
   table-layout: fixed;
   -webkit-flex-direction: initial;
@@ -38,7 +38,7 @@
     display: table-cell;
   }
 }
-.wrap(@prop) when (@prop = flexbox) {
+.wrap(@prop) when (@prop = "flexbox") {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
@@ -65,7 +65,7 @@
     display: inline-block;
   }
 }
-.wrap(@prop) when (@prop = normal) {
+.wrap(@prop) when (@prop = "normal") {
   display: block;
   table-layout: auto;
   -webkit-flex-direction: initial;
@@ -90,25 +90,25 @@
     display: inline-block;
   }
 }
-.wrap(@prop) when (@prop = left) {
+.wrap(@prop) when (@prop = "left") {
   -webkit-justify-content: flex-start;
   -ms-justify-content: flex-start;
   justify-content: flex-start;
   text-align: left;
 }
-.wrap(@prop) when (@prop = center) {
+.wrap(@prop) when (@prop = "center") {
   -webkit-justify-content: center;
   -ms-justify-content: center;
   justify-content: center;
   text-align: center;
 }
-.wrap(@prop) when (@prop = right) {
+.wrap(@prop) when (@prop = "right") {
   -webkit-justify-content: flex-end;
   -ms-justify-content: flex-end;
   justify-content: flex-end;
   text-align: right;
 }
-.wrap(@prop) when (@prop = top) {
+.wrap(@prop) when (@prop = "top") {
   -webkit-align-items: flex-start;
   -ms-align-items: flex-start;
   align-items: flex-start;
@@ -116,7 +116,7 @@
     vertical-align: top;
   }
 }
-.wrap(@prop) when (@prop = middle) {
+.wrap(@prop) when (@prop = "middle") {
   -webkit-align-items: center;
   -ms-align-items: center;
   align-items: center;
@@ -124,7 +124,7 @@
     vertical-align: middle;
   }
 }
-.wrap(@prop) when (@prop = bottom) {
+.wrap(@prop) when (@prop = "bottom") {
   -webkit-align-items: flex-end;
   -ms-align-items: flex-end;
   align-items: flex-end;
@@ -132,7 +132,7 @@
     vertical-align: bottom;
   }
 }
-.wrap(@prop) when (@prop = between) {
+.wrap(@prop) when (@prop = "between") {
   -webkit-justify-content: space-between;
   -ms-justify-content: space-between;
   justify-content: space-between;
@@ -140,7 +140,7 @@
   -ms-align-content: space-between;
   align-content: space-between;
 }
-.wrap(@prop) when (@prop = around) {
+.wrap(@prop) when (@prop = "around") {
   -webkit-justify-content: space-around;
   -ms-justify-content: space-around;
   justify-content: space-around;
@@ -148,12 +148,12 @@
   -ms-align-content: space-around;
   align-content: space-around;
 }
-.wrap(@prop) when (@prop = baseline) {
+.wrap(@prop) when (@prop = "baseline") {
   -webkit-align-items: baseline;
   -ms-align-items: baseline;
   align-items: baseline;
 }
-.wrap(@prop) when (@prop = reverse) {
+.wrap(@prop) when (@prop = "reverse") {
   -webkit-flex-direction: row-reverse;
   -ms-flex-direction: row-reverse;
   flex-direction: row-reverse;
@@ -161,7 +161,7 @@
   -ms-flex-wrap: wrap-reverse;
   flex-wrap: wrap-reverse;
 }
-.wrap(@prop) when (@prop = not-reverse) {
+.wrap(@prop) when (@prop = "not-reverse") {
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
@@ -169,7 +169,7 @@
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
 }
-.wrap(@prop, @val) when (@prop = gutter) {
+.wrap(@prop, @val) when (@prop = "gutter") {
   width: calc(~"100% + @{val}px");
   margin-left: -@val / 2px;
   margin-right: -@val / 2px;
@@ -180,19 +180,19 @@
     padding-right: @val / 2px;
   }
 }
-.wrap(@prop, @val) when (@prop = outside) {
+.wrap(@prop, @val) when (@prop = "outside") {
   width: 100%;
   margin-left: 0;
   margin-right: 0;
   padding-left: @val / 2px;
   padding-right: @val / 2px;
 }
-.wrap(@prop, @val) when (@prop = masonry) {
+.wrap(@prop, @val) when (@prop = "masonry") {
   -webkit-column-count: @val;
   -moz-column-count: @val;
   column-count: @val;
 }
-.wrap(@prop) when (@prop = auto) {
+.wrap(@prop) when (@prop = "auto") {
   > * {
     width: auto;
   }
@@ -211,31 +211,31 @@
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-.col(@prop, @val) when (@prop = width) {
+.col(@prop, @val) when (@prop = "width") {
   width: ~"@{val}px";
 }
-.col(@prop) when (@prop = hidden) {
+.col(@prop) when (@prop = "hidden") {
   overflow: hidden;
 }
-.col(@prop) when (@prop = not-hidden) {
+.col(@prop) when (@prop = "not-hidden") {
   display: inline-block;
 }
-.col(@prop) when (@prop = first) {
+.col(@prop) when (@prop = "first") {
   -ms-flex-order: -1;
   -webkit-order: -1;
   order: -1;
 }
-.col(@prop) when (@prop = not-first) {
+.col(@prop) when (@prop = "not-first") {
   -ms-flex-order: 0;
   -webkit-order: 0;
   order: 0;
 }
-.col(@prop) when (@prop = last) {
+.col(@prop) when (@prop = "last") {
   -ms-flex-order: 1;
   -webkit-order: 1;
   order: 1;
 }
-.col(@prop) when (@prop = not-last) {
+.col(@prop) when (@prop = "not-last") {
   -ms-flex-order: 0;
   -webkit-order: 0;
   order: 0;

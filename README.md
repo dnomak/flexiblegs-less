@@ -1,22 +1,22 @@
-# [flexiblegs-less-plus](http://flexible.gs)
+# [flexiblegs-less](http://flexible.gs)
 
-Flexible Grid System Less Plus
+Flexible Grid System Less
 
 ## Install
 
-### [Download](https://raw.githubusercontent.com/flexiblegs/flexiblegs-less-plus/master/flexiblegs-less-plus.less)
+### [Download](https://raw.githubusercontent.com/flexiblegs/flexiblegs-less/master/flexiblegs-less.less)
 ```less
-@import "flexiblegs-less-plus.less";
+@import "flexiblegs-less.less";
 ```
 
-### [npm](https://www.npmjs.com/package/flexiblegs-less-plus)
+### [npm](https://www.npmjs.com/package/flexiblegs-less)
 ```
-$ npm install --save flexiblegs-less-plus
+$ npm install --save flexiblegs-less
 ```
 
-### [bower](http://bower.io/search/?q=flexiblegs-less-plus)
+### [bower](http://bower.io/search/?q=flexiblegs-less)
 ```
-$ bower install --save flexiblegs-less-plus
+$ bower install --save flexiblegs-less
 ```
 
 ## License
