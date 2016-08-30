@@ -1,4 +1,4 @@
-/*! Flexible Grid System 5.5.2 | Less | MIT License | flexible.gs */
+/*! Flexible Grid System 5.5.3 | Less | MIT License | flexible.gs */
 
 .wrap() {
   display: block;
@@ -11,6 +11,7 @@
   box-sizing: border-box;
   > * {
     display: inline-block;
+    vertical-align: top;
   }
 }
 .wrap(@prop) when (@prop = "table") {
@@ -214,7 +215,7 @@
   width: ~"@{val}px";
 }
 .col(@prop) when (@prop = "hidden") {
-  overflow: hidden;
+  display: none;
 }
 .col(@prop) when (@prop = "not-hidden") {
   display: inline-block;
