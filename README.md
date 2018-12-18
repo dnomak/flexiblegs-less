@@ -1,4 +1,4 @@
-# [flexiblegs-less](http://flexible.gs)
+# [flexiblegs-less](https://dnomak.com/flexiblegs/)
 
 Flexible Grid System Less
 
@@ -10,17 +10,10 @@ Flexible Grid System Less
 ```
 
 ### [npm](https://www.npmjs.com/package/flexiblegs-less)
-```
+```bash
 $ npm install --save flexiblegs-less
-```
-
-### [bower](http://bower.io/search/?q=flexiblegs-less)
-```
-$ bower install --save flexiblegs-less
 ```
 
 ## License
 - Flexible Grid System is licensed under the MIT license.
   - [http://opensource.org/licenses/MIT](http://opensource.org/licenses/MIT)
-- Flexible Grid System documentation is licensed under a Creative Commons Attribution 4.0 International License.
-  - [http://creativecommons.org/licenses/by/4.0](http://creativecommons.org/licenses/by/4.0)
