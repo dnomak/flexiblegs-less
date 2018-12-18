@@ -6,6 +6,10 @@
   "author": "@dnomak <me@dnomak.com>",
   "license": "MIT",
   "main": "flexiblegs-less.less",
+  "keywords": [
+    "css",
+    "less"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/flexiblegs/flexiblegs-less.git"
